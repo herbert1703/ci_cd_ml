@@ -51,9 +51,12 @@ def transform_data(df: pd.DataFrame):
     return dummy_X.iloc[0, :].values.reshape(1, -1)
 
 
-model = bentoml.picklable_model.load_runner(
-    f"{MODEL_NAME}:latest", method_name="predict"
-)
+#model = bentoml.picklable_model.load_runner(
+#    f"{MODEL_NAME}:latest", method_name="predict"
+#)
+model = bentoml.picklable_model.get(
+    f"{MODEL_NAME}:latest").to_runner()
+
 # Create service with the model
 service = bentoml.Service("predict_employee", runners=[model])
 
@@ -63,5 +66,5 @@ def predict(employee: Employee) -> np.ndarray:
     """Transform the data then make predictions"""
     df = pd.DataFrame(employee.dict(), index=[0])
     df = transform_data(df)
-    result = model.run(df)[0]
+    result = model.predict.run(df)[0]
     return np.array(result)
