@@ -27,7 +27,7 @@ final:
   path: ${final.dir}/${final.name}
 
 model:
-  dir: models
+  dir: models/teste
   name: xgboost
   path: ${model.dir}/${model.name}
 
