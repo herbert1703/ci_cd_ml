@@ -33,8 +33,8 @@ stages:
       size: 3389
     outs:
     - path: models/teste/xgboost
-      md5: 1e18be780896a04cec08f1f220c6c0a6
-      size: 18204
+      md5: 7c72bc4ae8aa829c84944f6dbca1b72d
+      size: 18202
   evaluate_model:
     cmd: python training/src/evaluate_model.py
     deps:
@@ -46,8 +46,8 @@ stages:
       size: 163081
       nfiles: 4
     - path: models/teste/xgboost
-      md5: 1e18be780896a04cec08f1f220c6c0a6
-      size: 18204
+      md5: 7c72bc4ae8aa829c84944f6dbca1b72d
+      size: 18202
     - path: training/src/evaluate_model.py
       md5: 8bac814ee167e1b617bd8331d621ecb1
       size: 1919
