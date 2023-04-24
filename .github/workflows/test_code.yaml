@@ -1,5 +1,6 @@
 name: Test code and app
 on:
+  push:
   pull_request:
     paths:
       - config/**
