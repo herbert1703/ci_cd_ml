@@ -47,6 +47,7 @@ jobs:
 
       - name: Serve the app locally and run app tests
         run: |
+          BENTOML_CONFIG=./application/src/bentoml_configuration.yaml
           bentoml serve ./application/src/create_service.py:service  & 
           sleep 10
           pytest application/tests
