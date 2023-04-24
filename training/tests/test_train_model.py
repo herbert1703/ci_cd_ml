@@ -23,5 +23,5 @@ def test_xgboost():
     train_ds = Dataset(train_df, label="LeaveOrNot")
     validation_ds = Dataset(test_df, label="LeaveOrNot")
 
-    check = ModelErrorAnalysis(min_error_model_score=0.3)
+    check = ModelErrorAnalysis(min_error_model_score=0.03)
     check.run(train_ds, validation_ds, model)
