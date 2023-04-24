@@ -5,7 +5,7 @@ on:
       - config/**
       - training/**
       - application/**
-      - .github/workflows/test_training.yaml
+      - .github/workflows/test_code.yaml
 jobs:
   test_model:
     name: Test processed code and model
