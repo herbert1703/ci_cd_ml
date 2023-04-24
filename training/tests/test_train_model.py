@@ -2,8 +2,7 @@ import joblib
 import pandas as pd
 from deepchecks.tabular import Dataset
 #from deepchecks.checks import ModelErrorAnalysis
-from deepchecks.vision.checks import ModelErrorAnalysis
-#from deepchecks.tabular.checks import ModelErrorAnalysis
+from deepchecks.tabular.checks import ModelErrorAnalysis
 from hydra import compose, initialize
 from hydra.utils import to_absolute_path as abspath
 
