@@ -16,7 +16,7 @@ jobs:
         with:
           check: "all"
           target_branch: main
-          target_repository: herbert1703/ci_cd_ml
+          target_repository: https://herbert1703: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@github.com/herbert1703/ci_cd_ml.git
           update: true
       
       - name: Add, commit, and push changes
