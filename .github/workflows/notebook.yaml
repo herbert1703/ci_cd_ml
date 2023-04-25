@@ -15,7 +15,7 @@ jobs:
         uses: trsvchn/colab-badge-action@v4
         with:
           check: "all"
-          target_branch: master
+          target_branch: main
           target_repository: herbert1703/ci_cd_ml
           update: true
       
