@@ -24,3 +24,10 @@ stages:
     - data/processed
     - models/xgboost
     - training/src/evaluate_model.py
+  analyze:
+    cmd: python training/run_notebook.py
+    deps:
+    - notebooks/analyze_results.ipynb
+    - data/processed
+
+

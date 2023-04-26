@@ -1,0 +1,12 @@
+[2023-04-26 14:44:14,375][papermill][INFO] - Input Notebook:  notebooks/analyze_results.ipynb
+[2023-04-26 14:44:14,376][papermill][INFO] - Output Notebook: notebooks/analyze_results_out.ipynb
+[2023-04-26 14:44:14,596][papermill.translators][WARNING] - Black is not installed, parameters wont be formatted
+[2023-04-26 14:44:28,341][papermill][INFO] - Executing notebook with kernel: python3
+[2023-04-26 15:05:25,498][papermill][INFO] - Input Notebook:  notebooks/analyze_results.ipynb
+[2023-04-26 15:05:25,499][papermill][INFO] - Output Notebook: notebooks/analyze_results_out.ipynb
+[2023-04-26 15:05:25,570][papermill.translators][WARNING] - Black is not installed, parameters wont be formatted
+[2023-04-26 15:05:31,242][papermill][INFO] - Executing notebook with kernel: python3
+[2023-04-26 15:12:56,070][papermill][INFO] - Input Notebook:  notebooks/analyze_results.ipynb
+[2023-04-26 15:12:56,071][papermill][INFO] - Output Notebook: notebooks/analyze_results_out.ipynb
+[2023-04-26 15:12:56,127][papermill.translators][WARNING] - Black is not installed, parameters wont be formatted
+[2023-04-26 15:12:59,789][papermill][INFO] - Executing notebook with kernel: python3

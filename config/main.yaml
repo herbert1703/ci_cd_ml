@@ -3,6 +3,11 @@ defaults:
   - model: model1
   - _self_
 
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+    
 raw: 
   path: data/raw/Employee.csv
 
@@ -31,5 +36,8 @@ model:
   name: xgboost
   path: ${model.dir}/${model.name}
 
+notebooks:
+  dirinp: notebooks/analyze_results.ipynb
+  dirout: notebooks/analyze_results_out.ipynb
 
 mlflow_tracking_ui: https://dagshub.com/hsc/ci_cd_ml.mlflow
