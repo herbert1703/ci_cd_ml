@@ -1,0 +1,96 @@
+-----------------------------------------------------
+https://pub.towardsai.net/github-actions-in-mlops-automatically-check-and-deploy-your-ml-model-9a281d7f3c84
+Clonar repositório exemplo ci_cd
+git clone https://github.com/herbert1703/ci_cd_ml.git
+-----------------------------------------------------
+Instalar e inicializar o dvc
+pip install dvc
+dvc init
+Buscar dados do dvc após clone repositorio
+dvc pull -r origin
+-----------------------------------------------------
+Criar pasta para controle de versão dos dados via dvc. 
+Pode se utilizar também o dvc.yaml para configurar as pasta
+mkdir data
+echo '## Data will be uploaded to this folder' >> data/readme.md
+dvc add data/.
+dvc remote add origin https://dagshub.com/hsc/ci_cd_ml.dvc
+dvc remote modify origin --local auth basic
+dvc remote modify origin --local user hsc
+dvc remote modify origin --local password 9b114c32547419c50f6a2631151198a56a82e07d
+git add .
+git commit -m 'Added dvc'
+git push
+dvc push -r origin
+------------------------------------------------------
+Configuarção para rodar o mlflow na máquina local quando
+SET MLFLOW_TRACKING_URI=https://dagshub.com/hsc/ci_cd_ml.mlflow
+SET MLFLOW_TRACKING_USERNAME=hsc
+SET MLFLOW_TRACKING_PASSWORD=9b114c32547419c50f6a2631151198a56a82e07d
+python <script.py>
+------------------------------------------------------
+Criação de ambiente virtual no python
+pip install virtualenv
+python -m venv envci_cd_ml
+
+Entrar e sair do ambiente virtual
+envci_cd_ml\Scripts\activate
+deactivate
+
+Instalar pacotes
+pip install <nome_do_pacote>
+
+Atualizar o pip
+python -m pip install --upgrade pip
+
+Para criar lista dos pacotes necessários
+pip freeze > requirements.txt
+
+Para instalar lista dos pacotes necessários
+pip install -r requirements.txt
+------------------------------------------------------
+https://towardsdatascience.com/bentoml-create-an-ml-powered-prediction-service-in-minutes-23d135d6ca76
+Configurar o caminho para configuração de porta do BentoML
+SET BENTOML_CONFIG=<ENDERECO>
+Rodar um serviço
+bentoml serve src/bentoml_app_pandas.py:service --reload
+------------------------------------------------------
+Meu endereço do bentoml
+BENTOML_CONFIG=d:\clientes\herbert\customer_segmentation\bentoml_configuration.yaml
+------------------------------------------------------
+Outros comandos do git
+Listar configurações
+git config --system --list --show-origin
+git config --get user.email
+
+Lista configurações
+git remote -v
+
+Alterar configurações
+git remote set-url origin https://herbert1703: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@github.com/herbert1703/ci_cd_ml.git
+https://github.com/herbert1703/Engajamais.git
+https://github.com/herbert1703/ci_cd_ml.git
+
+Criação de e switch para nova branch criada
+git checkout -b <new-branch>
+
+Retorno para a branch principal
+git checkout main
+
+Push em branch para o repositório do github
+git push origin <new-branch>
+-----------------------------------------------------
+Papermill para utilização de notebook como modelo
+https://towardsdatascience.com/jupyter-notebook-as-a-function-create-reusable-notebooks-with-papermill-8f9bea5b9727
+
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+179.127.17.100 - proxmox 8006
